@@ -1,5 +1,7 @@
 # ECommerceAngular
 
+This website doesn't belong to any client or company; it's my portfolio, which I created at home to improve my skills and learn more things.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
 
 ## Development server
