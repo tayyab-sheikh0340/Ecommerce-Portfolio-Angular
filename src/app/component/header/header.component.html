@@ -1,0 +1,133 @@
+    <div class="navbar navbar-dark bg-primary shadow-sm" style="padding: 1rem 5%;">
+        <div class="navbar-brand align-item-center d-flex">
+            <i class="fas fa-shipping-fast">&nbsp;</i>
+            <strong class="e-com">E-Commerce</strong>
+        </div>
+        
+        <div class="d-flex">
+            <div class="search-parent form-group ">
+              
+                <input type="text" class="searchbar form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search products..">
+                <div class="search-icon"><span class="fas fa-search"></span></div>
+            </div>
+            
+            <button routerLink="sign-in" class="btn">
+                <a id="login-btn" class="btn btn-light" (click)="toggleLoginForm()">Sign In</a>
+            </button>
+
+            <button routerLink="cart" class="btn btn-primary">
+                <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+                <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+            </button>
+        </div>
+    </div>
+
+
+<!-- .........login form ....................... -->
+
+<div class="login-form-container" [class.active]="loginFormActive">
+    <div id="close-login-btn" class="fas fa-times"(click)="closeLoginForm()"></div>
+    <form action="" [formGroup]="registerForm" (ngSubmit)="registerSubmited()">
+      <div class="row g-0">
+        <div class="col text-center mb-3 bg-light">
+          <span class="fs-3 mb-3">Register</span>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col mb-3">
+          <label for="firstname" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstname" formControlName="firstname">
+          <div class="form-text text-danger" *ngIf="FirstName.errors?.['required'] && FirstName.touched"> 
+            First name is required.
+          </div>
+          <div class="form-text text-danger" *ngIf="FirstName.errors?.['minlength']"> 
+            Name is too Short.
+          </div>
+          <div class="form-text text-danger" *ngIf="FirstName.errors?.['pattern']"> 
+            Name should start with Alphabet.
+          </div>
+        </div>
+  
+        <div class="col mb-3">
+          <label for="lastname" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastname" formControlName="lastname">
+  
+          <div class="form-text text-danger" *ngIf="LastName.errors?.['required'] && LastName.touched"> 
+            Last name is required.
+          </div>
+          <div class="form-text text-danger" *ngIf="LastName.errors?.['minlength']"> 
+            Name is too Short.
+          </div>
+          <div class="form-text text-danger" *ngIf="LastName.errors?.['pattern']"> 
+            Name should start with Alphabet.
+          </div>
+  
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+            
+          <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.touched)"> 
+            Email is required.
+          </div>
+          <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.touched)"> 
+            Email is Invalid.
+          </div>
+  
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col mb-3">
+          <label for="mobile" class="form-label">Mobile</label>
+          <input type="number" class="form-control" id="mobile" formControlName="mobile">
+          <div class="form-text text-danger" *ngIf="Mobile.errors?.['required'] && (Mobile.touched)"> 
+            Number is Required.
+          </div>
+          <div class="form-text text-danger" *ngIf="Mobile.errors?.['pattern'] && (Mobile.touched)"> 
+            Number is Invalid.
+          </div>
+        </div>
+  
+        <div class="col ps-3 mb-3">
+          <div class="m-1">Gender</div>
+          <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" value="m" id="male" formControlName="gender">
+              <label for="male" class="form-check-label">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" value="f" id="female" formControlName="gender">
+            <label for="Female" class="form-check-label">Female</label>
+        </div>
+  
+        <div class="form-text text-danger" *ngIf="Gender.errors?.['required']"> 
+           Select Gender.
+        </div>
+          
+      </div>
+      </div>
+  
+        <div class="row">
+          <div class="col mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password">
+          </div>
+  
+        </div>
+  
+      <div class="row">
+        <div class="col-6 offset-3">
+          <div class="d-grid">
+              <button type="submit" class="btn btn-primary" style="width: 100%;" [disabled]="registerForm.invalid">Submit</button>
+          </div>
+        </div>
+      </div>
+  
+  
+    </form>
+  </div>
+     

@@ -1,0 +1,138 @@
+.search-parent{
+ position: relative; align-self: center;
+}
+
+.searchbar{
+  width: 25rem;
+}
+
+.search-icon{
+   position: absolute; top: 6px; right: 20px; 
+}
+
+#login-btn{
+    font-size: 19px; border: none;
+}
+#login-btn:hover{
+    background-color: rgb(61, 61, 61);
+    color: white; 
+}
+
+.navbar-brand .fa-shipping-fast{
+  font-size: 40px;
+}
+.navbar-brand .e-com{
+  font-size: 30px;
+}
+
+
+
+/* ..........................Login form............................... */
+
+
+.login-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .7);
+    position: fixed;
+    top: 0px; 
+    right: -105%;
+    z-index: 1000;
+    height: 100%;
+    width: 100% ;
+}
+
+.login-form-container form{
+  background: #fff;
+  border: var(--border);
+  width: 30rem;
+  padding: 1.8rem;
+  box-shadow: var(--box-shadow);
+  margin: 0rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.login-form-container form h3{
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--black);
+  text-align: center ;
+}
+
+
+.login-form-container form span{
+    display: block;
+    font-size: 1.3rem;
+    padding-top: .9rem;
+     
+}
+     
+
+.login-form-container form .checkbox label{
+ 
+  font-size: 1.2rem;
+  color: var(--light-color);
+  cursor: pointer;
+}      
+
+.login-form-container form p{
+    /* padding-top: 1rem; */
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--light-color);
+}
+
+.login-form-container form p a{
+  
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.login-form-container #close-login-btn{
+  position: absolute;
+  top: 2rem; right: 3rem;
+  font-size: 3rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+
+
+.login-form-container.active{
+right: 0px; 
+transition: 0.3s;
+}
+
+.login-form-container.remove{
+ 
+  transition: 0.3s;
+  }
+
+
+  @media screen and (max-width: 920px){
+    .navbar-brand .fa-shipping-fast{
+      font-size: 30px;
+    }
+    .navbar-brand .e-com{
+      font-size: 20px;
+    }
+
+    .searchbar{
+      width: 15rem;
+    }
+  }
+  @media screen and (max-width: 498px){
+    #login-btn{
+      font-size: 13px;
+  }
+  .fa-cart-plus{
+    font-size: 26px !important;
+  }
+  .badge{
+    font-size: 9px !important;
+  }
+  .searchbar{
+    width: 11rem;
+  }
+  }
